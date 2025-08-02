@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vulnerable Page - Clickjacking Demo</title>
+</head>
+<body>
+    <h1>Bank of Baroda</h1>
+    <p>Account Balance: $1,000</p>
+    <button class="transfer-btn" onclick="alert('**$500 transferred!**')">
+      Transfer $500
+    </button>
+</body>
+</html>
