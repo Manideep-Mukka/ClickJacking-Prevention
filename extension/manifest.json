@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Clickjack Detector",
+  "version": "1.0",
+  "description": "Alerts you about possible clickjacking attempts on webpages.",
+  "icons": {
+    "128": "icon128.png"
+  },
+  "permissions": [
+    "tabs"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
