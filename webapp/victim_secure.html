@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Secure Page - Clickjacking Demo</title>
+  <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none';" />
+</head>
+<body>
+  <h1>Bank of India (Secure)</h1>
+  <p>Account Balance: $1,000</p>
+  <button id="transfer-btn" onclick="alert('**$500 transferred!**')">
+    Transfer $500
+  </button>
+  <script>
+    if (window.top !== window.self) {
+      console.warn("Clickjacking attempt detected! Busting out of the frame...");
+      window.top.location = window.location;
+    }
+  </script>
+</body>
+</html>
