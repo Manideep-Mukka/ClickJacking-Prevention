@@ -2,7 +2,7 @@
 
 (function() {
   const WARNING_ID = 'clickjack-warning-overlay';
-  const IMAGE_URL = chrome.runtime.getURL('warning.png');
+  const IMAGE_URL = chrome.runtime.getURL('icon128.png');
 
   function showWarningOverlay() {
     if (document.getElementById(WARNING_ID)) return;
