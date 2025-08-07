@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Clickjack Detector",
-  "version": "1.0",
-  "description": "Alerts you about possible clickjacking attempts on webpages.",
+  "version": "1.1",
+  "description": "Alerts you with a security banner when a clickjacking overlay is detected.",
   "icons": {
     "128": "icon128.png"
   },
@@ -14,6 +14,12 @@
       "matches": ["<all_urls>"],
       "js": ["contentScript.js"],
       "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["warning.png"],
+      "matches": ["<all_urls>"]
     }
   ]
 }
